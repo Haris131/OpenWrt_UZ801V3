@@ -11,4 +11,17 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
+
+# Clone community packages to package
+mkdir -p package/community
+pushd package/community
+
+# HelmiWrt packages
+git clone --depth=1 https://github.com/Haris131/helmiwrt-packages
+
+git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-status
+git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status
+
+# Out to openwrt dir
+popd
