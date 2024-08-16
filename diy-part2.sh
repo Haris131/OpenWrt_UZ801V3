@@ -21,10 +21,28 @@ mkdir -p package/community
 pushd package/community
 
 # HelmiWrt packages
-git clone --depth=1 https://github.com/Haris131/helmiwrt-packages
+svn co https://github.com/Haris131/helmiwrt-packages/trunk/badvpn badvpn
+svn co https://github.com/Haris131/helmiwrt-packages/trunk/corkscrew corkscrew
+svn co https://github.com/Haris131/helmiwrt-packages/trunk/dnstt dtnss
+svn co https://github.com/Haris131/helmiwrt-packages/trunk/luci-app-libernet-plus
 
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-status
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status
 
 # Out to openwrt dir
 popd
+
+#-----------------------------------------------------------------------------
+#   Start of @helmiau terminal scripts additionals menu
+#-----------------------------------------------------------------------------
+HWOSDIR="package/base-files/files"
+rawgit="https://raw.githubusercontent.com"
+[ ! -d $HWOSDIR/usr/bin ] && mkdir -p $HWOSDIR/usr/bin
+
+# Add ram checker from wegare123
+# run "ram" using terminal to check ram usage
+wget --no-check-certificate -qO $HWOSDIR/bin/ram "$rawgit/wegare123/ram/main/ram.sh"
+
+# Add fix download file.php for xderm and libernet
+# run "fixphp" using terminal for use
+wget --no-check-certificate -qO $HWOSDIR/bin/fixphp "$rawgit/helmiau/openwrt-config/main/fix-xderm-libernet-gui"
