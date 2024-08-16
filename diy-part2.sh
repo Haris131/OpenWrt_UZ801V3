@@ -23,8 +23,8 @@ pushd package/community
 # HelmiWrt packages
 svn co https://github.com/Haris131/helmiwrt-packages/trunk/badvpn badvpn
 svn co https://github.com/Haris131/helmiwrt-packages/trunk/corkscrew corkscrew
-svn co https://github.com/Haris131/helmiwrt-packages/trunk/dnstt dtnss
-svn co https://github.com/Haris131/helmiwrt-packages/trunk/luci-app-libernet-plus
+svn co https://github.com/Haris131/helmiwrt-packages/trunk/dnstt dnstt
+svn co https://github.com/Haris131/helmiwrt-packages/trunk/luci-app-libernet-plus luci-app-libernet-plus
 
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-status
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status
