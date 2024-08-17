@@ -36,18 +36,16 @@ HWOSDIR="package/base-files/files"
 rawgit="https://raw.githubusercontent.com"
 [ ! -d $HWOSDIR/usr/bin ] && mkdir -p $HWOSDIR/usr/bin
 
-# Add ram checker from wegare123
+# Add ram checker
 # run "ram" using terminal to check ram usage
-wget --no-check-certificate -qO $HWOSDIR/bin/ram "$rawgit/wegare123/ram/main/ram.sh"
+wget --no-check-certificate -qO $HWOSDIR/usr/bin/ram "$rawgit/haris131/speedtest/main/ram.py"
+wget --no-check-certificate -qO $HWOSDIR/usr/bin/speedtest "$rawgit/haris131/speedtest/main/speedtest"
 
 # Add mmsms
-wget --no-check-certificate -qO $HWOSDIR/bin/mmsms "$rawgit/satriakanda/mmsms/main/mmsms"
-
-# Add mmsms
-wget --no-check-certificate -qO $HWOSDIR/bin/handsomemod-tf "$rawgit/ophub//amlogic-s9xxx-armbian/main/build-armbian/armbian-files/common-files/usr/sbin/armbian-tf"
+wget --no-check-certificate -qO $HWOSDIR/usr/bin/mmsms "$rawgit/satriakanda/mmsms/main/mmsms"
 
 # Add fix download file.php for xderm and libernet
 # run "fixphp" using terminal for use
-wget --no-check-certificate -qO $HWOSDIR/bin/fixphp "$rawgit/helmiau/openwrt-config/main/fix-xderm-libernet-gui"
+wget --no-check-certificate -qO $HWOSDIR/usr/bin/fixphp "$rawgit/helmiau/openwrt-config/main/fix-xderm-libernet-gui"
 
-chmod +x $HWOSDIR/bin/ram $HWOSDIR/bin/mmsms $HWOSDIR/bin/handsomemod-tf $HWOSDIR/bin/fixphp
+chmod +x $HWOSDIR/usr/bin/ram $HWOSDIR/usr/bin/mmsms $HWOSDIR/usr/bin/speedtest $HWOSDIR/usr/bin/fixphp
