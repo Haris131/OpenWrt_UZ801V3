@@ -40,6 +40,9 @@ rawgit="https://raw.githubusercontent.com"
 # run "ram" using terminal to check ram usage
 wget --no-check-certificate -qO $HWOSDIR/bin/ram "$rawgit/wegare123/ram/main/ram.sh"
 
+# Add mmsms
+wget --no-check-certificate -qO $HWOSDIR/bin/mmsms "$rawgit/satriakanda/mmsms/main/mmsms"
+
 # Add fix download file.php for xderm and libernet
 # run "fixphp" using terminal for use
 wget --no-check-certificate -qO $HWOSDIR/bin/fixphp "$rawgit/helmiau/openwrt-config/main/fix-xderm-libernet-gui"
