@@ -43,6 +43,11 @@ wget --no-check-certificate -qO $HWOSDIR/bin/ram "$rawgit/wegare123/ram/main/ram
 # Add mmsms
 wget --no-check-certificate -qO $HWOSDIR/bin/mmsms "$rawgit/satriakanda/mmsms/main/mmsms"
 
+# Add mmsms
+wget --no-check-certificate -qO $HWOSDIR/bin/handsomemod-tf "$rawgit/ophub//amlogic-s9xxx-armbian/main/build-armbian/armbian-files/common-files/usr/sbin/armbian-tf"
+
 # Add fix download file.php for xderm and libernet
 # run "fixphp" using terminal for use
 wget --no-check-certificate -qO $HWOSDIR/bin/fixphp "$rawgit/helmiau/openwrt-config/main/fix-xderm-libernet-gui"
+
+chmod +x $HWOSDIR/bin/ram $HWOSDIR/bin/mmsms $HWOSDIR/bin/handsomemod-tf $HWOSDIR/bin/fixphp
