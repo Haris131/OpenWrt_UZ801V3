@@ -20,6 +20,7 @@ sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0e
 sed -i 's/5.15.33/5.15.162/g' package/kernel/mac80211/Makefile
 sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/00444ab103f5e4ce34d3ba7895289d2b78b84f14a35f9021b60cb1a0270dfec5/g' package/kernel/mac80211/Makefile
 sed -i 's/CONFIG_LINUX_5_10=y/CONFIG_LINUX_5_15=y/g' .config
+sed -i 's/CPU_SUBTYPE:=neon//g' target/linux/msm89xx/msm8916/target.mk
 mv target/linux/msm89xx/patches-5.10 target/linux/msm89xx/patches-5.15
 mv target/linux/msm89xx/config-5.10 target/linux/msm89xx/config-5.15
 
