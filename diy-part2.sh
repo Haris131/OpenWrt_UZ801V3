@@ -13,8 +13,15 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
 
-# Change hash kernel
-sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/1b6b3bded4c81814ebebe2d194c2f8966d2399005b85ebb0557285b6e73f5422/g' package/kernel/mac80211/Makefile
+# Update kernel version to 5.15.162
+sed -i 's/LINUX_VERSION-5.4 = .213//g' include/kernel-version.mk
+sed -i 's/LINUX_KERNEL_HASH-5.4.213 = e67ce168477e580375a80f3caef16819a85b15faa2d382adc6df18a62ad6baf1//g' include/kernel-version.mk
+sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0eaa852ef42fb168185b4315/LINUX_KERNEL_HASH-5.10.162 = 00444ab103f5e4ce34d3ba7895289d2b78b84f14a35f9021b60cb1a0270dfec5/g' include/kernel-version.mk
+sed -i 's/5.15.33/5.15.162/g' package/kernel/mac80211/Makefile
+sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/00444ab103f5e4ce34d3ba7895289d2b78b84f14a35f9021b60cb1a0270dfec5/g' package/kernel/mac80211/Makefile
+sed -i 's/CONFIG_LINUX_5_10=y/CONFIG_LINUX_5_15=y/g' .config
+mv target/linux/msm89xx/patches-5.10 target/linux/msm89xx/patches-5.15
+mv target/linux/msm89xx/config-5.10 target/linux/msm89xx/config-5.15
 
 # Clone community packages to package
 mkdir -p package/community
