@@ -16,6 +16,7 @@ sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_gener
 # Update hash kernel
 sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/1b6b3bded4c81814ebebe2d194c2f8966d2399005b85ebb0557285b6e73f5422/g' package/kernel/mac80211/Makefile
 sed -i 's/CPU_SUBTYPE:=neon//g' target/linux/msm89xx/msm8916/target.mk
+sed -i 's/MobiTech OpenStick UZ801V3/UZ801V3.2/g' target/linux/msm89xx/files/arch/arm64/boot/dts/qcom/msm8916-handsome-openstick-uz801v3.dts
 
 # Clone community packages to package
 mkdir -p package/community
