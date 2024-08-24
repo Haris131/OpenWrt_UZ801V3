@@ -13,10 +13,8 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
 
-# Update kernel version to 5.15.162
-sed -i 's/LINUX_VERSION-5.4 = .213//g' include/kernel-version.mk
+# Update kernel version
 sed -i 's/LINUX_VERSION-5.10 = .33/LINUX_VERSION-5.10 = .244/g' include/kernel-version.mk
-sed -i 's/LINUX_KERNEL_HASH-5.4.213 = e67ce168477e580375a80f3caef16819a85b15faa2d382adc6df18a62ad6baf1//g' include/kernel-version.mk
 sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0eaa852ef42fb168185b4315/LINUX_KERNEL_HASH-5.10.244 = 19b099c67324bba6378e22dc51ad3906e4dcd6a908d137766b4bfa9174ddd11a/g' include/kernel-version.mk
 sed -i 's/CPU_SUBTYPE:=neon//g' target/linux/msm89xx/msm8916/target.mk
 
