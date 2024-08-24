@@ -18,6 +18,7 @@ sed -i 's/LINUX_VERSION-5.4 = .213//g' include/kernel-version.mk
 sed -i 's/LINUX_VERSION-5.10 = .33/LINUX_VERSION-5.10 = .244/g' include/kernel-version.mk
 sed -i 's/LINUX_KERNEL_HASH-5.4.213 = e67ce168477e580375a80f3caef16819a85b15faa2d382adc6df18a62ad6baf1//g' include/kernel-version.mk
 sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0eaa852ef42fb168185b4315/LINUX_KERNEL_HASH-5.10.244 = 19b099c67324bba6378e22dc51ad3906e4dcd6a908d137766b4bfa9174ddd11a/g' include/kernel-version.mk
+sed -i 's/CPU_SUBTYPE:=neon//g' target/linux/msm89xx/msm8916/target.mk
 
 # Update hash kernel
 sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/1b6b3bded4c81814ebebe2d194c2f8966d2399005b85ebb0557285b6e73f5422/g' package/kernel/mac80211/Makefile
