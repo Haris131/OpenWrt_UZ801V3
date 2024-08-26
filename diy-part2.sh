@@ -14,8 +14,11 @@
 sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
 
 # Update kernel version
-sed -i 's/LINUX_VERSION-5.10 = .33/LINUX_VERSION-5.10 = .224/g' include/kernel-version.mk
-sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0eaa852ef42fb168185b4315/LINUX_KERNEL_HASH-5.10.224 = 19b099c67324bba6378e22dc51ad3906e4dcd6a908d137766b4bfa9174ddd11a/g' include/kernel-version.mk
+sed -i 's/LINUX_VERSION-5.10 = .33/LINUX_VERSION-6.6 = .47/g' include/kernel-version.mk
+sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0eaa852ef42fb168185b4315/LINUX_KERNEL_HASH-6.6.47 = d43376c9e9eaa92bb1b926054bd160d329c58a62d64bd65fe1222c11c6564f50/g' include/kernel-version.mk
+sed -i 's/CONFIG_LINUX_5_10=y/CONFIG_LINUX_6_6=y/g' .config
+mv target/linux/msm89xx/patches-5.10 target/linux/msm89xx/patches-6.6
+mv target/linux/msm89xx/config-5.10 target/linux/msm89xx/config-6.6
 
 # Update hash kernel
 sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/1b6b3bded4c81814ebebe2d194c2f8966d2399005b85ebb0557285b6e73f5422/g' package/kernel/mac80211/Makefile
