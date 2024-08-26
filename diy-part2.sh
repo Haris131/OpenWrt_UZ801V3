@@ -19,7 +19,7 @@ sed -i 's/LINUX_KERNEL_HASH-5.10.33 = 933fdbc36371c0f830b7a6a957a559fca2dad1cc0e
 sed -i 's/CONFIG_LINUX_5_10=y/CONFIG_LINUX_6_6=y/g' .config
 sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=6.6/g' target/linux/msm89xx/Makefile
 sed -i 's/KERNEL_TESTING_PATCHVER:=5.10/KERNEL_TESTING_PATCHVER:=6.6/g' target/linux/msm89xx/Makefile
-mv target/linux/msm89xx/patches-5.10 target/linux/msm89xx/patches-6.6
+rm -rf target/linux/msm89xx/patches-5.10
 mv target/linux/msm89xx/config-5.10 target/linux/msm89xx/config-6.6
 
 # Update hash kernel
