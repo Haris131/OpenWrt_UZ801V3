@@ -29,6 +29,11 @@ pushd package/community
 # HelmiWrt packages
 git clone --depth=1 https://github.com/Haris131/helmiwrt-packages
 
+# Download v2ray-core
+wget https://raw.githubusercontent.com/mohd-akram/ghget/refs/heads/master/ghget -O ghget
+chmod +x ghget
+./ghget https://github.com/immortalwrt/packages/tree/openwrt-21.02/net/v2ray-core
+
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-status
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-perf
