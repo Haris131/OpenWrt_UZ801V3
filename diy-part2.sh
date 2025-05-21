@@ -32,6 +32,7 @@ git clone --depth=1 https://github.com/Haris131/helmiwrt-packages
 # Download v2ray-core
 wget https://raw.githubusercontent.com/mohd-akram/ghget/refs/heads/master/ghget -O ghget
 chmod +x ghget
+sed -i "s/set -euo pipefail//g" ghget
 ./ghget https://github.com/immortalwrt/packages/tree/openwrt-21.02/net/v2ray-core
 
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-status
