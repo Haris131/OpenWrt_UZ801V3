@@ -18,6 +18,9 @@ sed -i 's/07237fd9f66ce4b95d551569e2f8395342fdb720305f01aa52cd5ca216594278/1b6b3
 sed -i 's/CPU_SUBTYPE:=neon//g' target/linux/msm89xx/msm8916/target.mk
 sed -i 's/MobiTech OpenStick UZ801V3/UZ801V3.2/g' target/linux/msm89xx/files/arch/arm64/boot/dts/qcom/msm8916-handsome-openstick-uz801v3.dts
 
+# Patch OverClock
+wget https://github.com/Haris131/linux-msm/commit/bfbe1ebeb1df2bcfd8a04addde787f1abc00d914.patch -O target/linux/msm89xx/patches-5.10/0096-overclock-msm8916.patch
+
 # Clone community packages to package
 mkdir -p package/community
 pushd package/community
@@ -27,6 +30,7 @@ git clone --depth=1 https://github.com/Haris131/helmiwrt-packages
 
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-status
 git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status
+git clone --depth=1 https://github.com/gSpotx2f/luci-app-cpu-perf
 
 # Out to openwrt dir
 popd
