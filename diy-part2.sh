@@ -20,7 +20,7 @@ sed -i 's/MobiTech OpenStick UZ801V3/UZ801V3.2/g' target/linux/msm89xx/files/arc
 sed -i 's/download-fallback.gnome.org/download.gnome.org/g' package/feeds/handsomefeed/libgudev/Makefile
 
 # Patch OverClock
-wget https://github.com/Haris131/linux-msm/commit/bfbe1ebeb1df2bcfd8a04addde787f1abc00d914.patch -O target/linux/msm89xx/patches-5.10/0096-overclock-msm8916.patch
+wget https://github.com/Haris131/uz801v3-kernel/commit/fabdd0494c48f7c86ebf63f96e2a8c213ecdb96c.patch -O target/linux/msm89xx/patches-5.10/0096-overclock-msm8916.patch
 
 # Clone community packages to package
 mkdir -p package/community
